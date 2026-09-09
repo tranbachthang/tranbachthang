@@ -4,7 +4,9 @@
 
 ### 🛡️ Web Penetration Tester · Offensive Security · Cybersecurity
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=2EA44F&center=true&vCenter=true&width=440&lines=Web+Penetration+Tester;Offensive+Security+Enthusiast;AI-Augmented+Pentester;Building+Security+Tools)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&pause=1000&color=2EA44F&center=true&vCenter=true&width=440&lines=Web+Penetration+Tester;Offensive+Security+Enthusiast;AI-Augmented+Pentester;Building+Security+Tools)](https://git.io/typing-svg)
+
+<img src="https://komarev.com/ghpvc/?username=tranbachthang&color=2EA44F&style=for-the-badge&label=PROFILE+VIEWS" alt="views"/>
 
 </div>
 
@@ -14,7 +16,7 @@
 
 - 🎓 **HCMUTE** — Khoa CNTT, Hệ thống máy tính & Mạng · MSSV 23162094
 - 🛡️ **Web Penetration Tester** — chứng chỉ CyberJutsu: khai thác **7 lỗ hổng** trên ứng dụng thật (gồm **RCE Critical 9.8** qua Insecure Deserialization)
-- 🤖 **AI-Augmented Pentester** — dùng AI agents để tăng tốc phân tích & tự động hóa (PCAP pipeline, multi-agent recon)
+- 🤖 **AI-Augmented Pentester** — dùng AI agents tăng tốc phân tích & tự động hóa (PCAP pipeline, multi-agent recon)
 - ⚡ Thích **build tools** hơn là chỉ dùng tools có sẵn — hiểu sâu cơ chế lỗ hổng
 
 ## 🛠 Tech Stack
@@ -59,9 +61,22 @@
 
 <div align="center">
 
-![Stats](https://github-readme-stats.vercel.app/api?username=tranbachthang&show_icons=true&theme=github_dark&hide_border=true&count_private=true)
+![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=tranbachthang&theme=github-dark&hide_border=true&area=true)
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=tranbachthang&layout=compact&theme=github_dark&hide_border=true)
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=tranbachthang&show_icons=true&theme=github_dark&hide_border=true&count_private=true"/>
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tranbachthang&layout=compact&theme=github_dark&hide_border=true"/>
+
+<img src="https://streak-stats.demolab.com?user=tranbachthang&theme=github-dark-blue&hide_border=true" alt="streak"/>
+
+![Trophy](https://github-profile-trophy.vercel.app/?username=tranbachthang&theme=onedark&no-frame=true&column=6&margin-w=15)
+
+</div>
+
+## 🐍 Contribution Snake (animation)
+
+<div align="center">
+
+![snake](https://raw.githubusercontent.com/tranbachthang/tranbachthang/output/github-contribution-grid-snake.svg)
 
 </div>
 
@@ -72,10 +87,4 @@
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:thangtran.hcmute@gmail.com)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/tranbachthang)
 
-</div>
-
----
-
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=tranbachthang&color=2EA44F&style=flat" alt="views" />
 </div>
