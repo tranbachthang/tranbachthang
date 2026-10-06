@@ -16,6 +16,7 @@
 
 - 🤖 **AI Red Teamer** — studying the full **HTB Academy AI Red Teamer Job-Role Path (ID 418)**: 12 modules / 230 sections — prompt injection, LLM output attacks, data poisoning, adversarial evasion, privacy attacks, AI defence
 - 🛡️ **Offensive security background** — CyberJutsu Web Pentest: exploited **7 vulnerabilities** on a real app (incl. **Critical RCE, CVSS 9.8** via PHP POP-chain deserialization) and delivered a 28-page report
+- 🧬 **Malware analysis & reverse engineering** — static + dynamic + manual unpack of real samples in an isolated VM (DIE · PEStudio · CFF Explorer · PE-sieve · x32dbg · Procmon · Regshot · FakeNet-NG · IDA Free), with a self-built pipeline that pushes every artefact to the host as text and auto-generates the Word report
 - 🧱 **Build the things that get attacked** — I run my own agent platform (extensions, skills, sub-agents, model-routing gateway) with an untrusted-content boundary and a policy guard + kill-switch
 - 🎓 HCMUTE — Faculty of IT, Computer Systems & Networks · MSSV 23162094
 - 🎯 Target: **AI Red Teamer / AI Security Engineer / AI Agent Trainer**
@@ -29,6 +30,9 @@ Prompt injection (direct · indirect · multi-turn) · jailbreak & refusal analy
 
 **AI Defence & Guardrails**<br>
 Untrusted-content boundaries for agent input · instruction/data separation · rule-based policy enforcement + kill-switch · allowlist tool gating · system-wide prompt guidelines · outcome logging for audit
+
+**Malware Analysis & Reverse Engineering**<br>
+Static triage (hash · entropy · section/import analysis · strings/FLOSS IOC extraction) · dynamic analysis in a network-isolated VM · **manual unpacking** (LoadLibrary loader + PE-sieve memory dumps) · embedded-PE carving & XOR-key hunting · anti-analysis awareness (packer detection, obfuscation, .rsrc compression) · artifact/provenance verification (a dumped blob that "looked like payload" was proven to be Windows MUI resources — conclusion corrected, not written up as a find)
 
 **Agent Engineering**<br>
 Multi-agent orchestration (planner → scout → worker → reviewer) · tool/function registration · agent memory (per-target recall/remember) · skill packaging with metadata + promote/rollback · multi-model routing gateway · telemetry & watchdog · budget brakes for unattended runs
@@ -44,6 +48,9 @@ Multi-agent orchestration (planner → scout → worker → reviewer) · tool/fu
 | 📡 [**pcap-pipeline**](https://github.com/tranbachthang/pcap-pipeline) | PCAP intrusion detection — 8 phases, **10 AI agents**, rule-based scoring + **Isolation Forest** ML; detects port scan, brute force, C2 beaconing, exfiltration, backdoor, DNS tunneling/DGA | Python · Scapy · ML |
 | 📶 [**network-monitoring-system**](https://github.com/tranbachthang/network-monitoring-system) | Network monitoring & anomaly detection (Zabbix + PRTG + SNMP + Isolation Forest) with alerting | Flask · ML |
 | 🎯 [**web-pentest-toolkit**](https://github.com/tranbachthang/web-pentest-toolkit) | Blind SQLi brute-force + Playwright browser-automation agent | Python · Playwright |
+
+**Malware Analysis — real samples, isolated VM (Win7 x64, VNC, no shared folders)**<br>
+Analysed **PE64 DLL samples** end to end: `detect-it-easy` triage (packed 81%, entropy 6.54, VS2022, 7 sections) → 307-line IOC extraction (config keys, `JSON-RPC 2.0` C2 protocol, Mutex, PDB path, raw-Winsock imports WS2_32/CRYPT32/bcrypt/ADVAPI32) → **manual unpack** with a PowerShell `LoadLibrary` loader + PE-sieve → post-processing on the host with self-written Python (`check_resc_blob.py`, `extract_embed.py`, `xor_key_hunt.py`) → Word report with POC screenshots. Also 3rd-party artefact comparison with **Regshot / FakeNet-NG / x32dbg / Procmon**. Tooling is reusable: `analyze.ps1` + `vm_receiver.py` (text push-over-HTTP instead of reading hundreds of screenshots).
 
 **Web App Pentest — Social Network (CyberJutsu Final Exam, grey-box)**<br>
 7 vulnerabilities chained into full compromise — Insecure Deserialization (PHP POP chain) → RCE **9.8**, SQLi (32-table dump) **8.1**, webshell upload **8.1**, blind SQLi **8.1**, RSA private-key disclosure **7.5**, IDOR **6.5**, reflected XSS → admin JWT theft **6.1**. 28-page report with PoC, CVSS, root cause and remediation. Plus a self-hosted **59-exercise training range** (Docker + nginx + Cloudflare Tunnel) and `DeepRecon`, a 5-agent recon framework (OSINT → attack surface → NVD CVE lookup → validation → report).
@@ -66,17 +73,46 @@ Multi-agent orchestration (planner → scout → worker → reviewer) · tool/fu
 ![Scapy](https://img.shields.io/badge/Scapy-000000?style=for-the-badge)
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
 
+**Malware Analysis & Reverse Engineering**<br>
+![Detect It Easy](https://img.shields.io/badge/Detect_It_Easy_(DIE)-2E7D32?style=for-the-badge)
+![PEStudio](https://img.shields.io/badge/PEStudio-4B5563?style=for-the-badge)
+![CFF Explorer](https://img.shields.io/badge/CFF_Explorer-6B7280?style=for-the-badge)
+![PE-sieve](https://img.shields.io/badge/PE--sieve-1F2937?style=for-the-badge)
+![x32dbg](https://img.shields.io/badge/x32dbg-374151?style=for-the-badge)
+![IDA Free](https://img.shields.io/badge/IDA_Free-111827?style=for-the-badge)
+![FLOSS](https://img.shields.io/badge/FLOSS-7C3AED?style=for-the-badge)
+![Procmon](https://img.shields.io/badge/Procmon-0EA5E9?style=for-the-badge)
+![Regshot](https://img.shields.io/badge/Regshot-0D9488?style=for-the-badge)
+![FakeNet-NG](https://img.shields.io/badge/FakeNet--NG-B91C1C?style=for-the-badge)
+![VMware](https://img.shields.io/badge/VMware_Sandbox-607078?style=for-the-badge&logo=vmware&logoColor=white)
+![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
+
 **Offensive Security**<br>
 ![Burp Suite](https://img.shields.io/badge/Burp_Suite-FF6633?style=for-the-badge&logo=burpsuite&logoColor=white)
 ![OWASP ZAP](https://img.shields.io/badge/OWASP_ZAP-00549E?style=for-the-badge&logo=owasp&logoColor=white)
 ![Nmap](https://img.shields.io/badge/Nmap-0E83CD?style=for-the-badge&logo=nmap&logoColor=white)
 ![sqlmap](https://img.shields.io/badge/sqlmap-000000?style=for-the-badge)
+![ffuf](https://img.shields.io/badge/ffuf-000000?style=for-the-badge)
+![Gobuster](https://img.shields.io/badge/Gobuster-2C3E50?style=for-the-badge)
 ![Metasploit](https://img.shields.io/badge/Metasploit-2596BE?style=for-the-badge&logo=metasploit&logoColor=white)
-![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white)
+![Hydra](https://img.shields.io/badge/Hydra-DC2626?style=for-the-badge)
+![John the Ripper](https://img.shields.io/badge/John_the_Ripper-1F2937?style=for-the-badge)
+![hashcat](https://img.shields.io/badge/hashcat-1E40AF?style=for-the-badge)
+![aircrack-ng](https://img.shields.io/badge/aircrack--ng-0F766E?style=for-the-badge)
+![hcxdumptool](https://img.shields.io/badge/hcxdumptool_%2F_hcxpcapngtool-334155?style=for-the-badge)
+
+**Blue Team / Monitoring**<br>
+![Suricata](https://img.shields.io/badge/Suricata-B91C1C?style=for-the-badge)
+![Zabbix](https://img.shields.io/badge/Zabbix-D40000?style=for-the-badge&logo=zabbix&logoColor=white)
+![PRTG](https://img.shields.io/badge/PRTG-00A3E0?style=for-the-badge)
+![SNMP](https://img.shields.io/badge/SNMP-475569?style=for-the-badge)
+![GNS3](https://img.shields.io/badge/GNS3-1E3A8A?style=for-the-badge)
+![Cisco Packet Tracer](https://img.shields.io/badge/Cisco_Packet_Tracer-1BA0D7?style=for-the-badge&logo=cisco&logoColor=white)
 
 **Languages & Infra**<br>
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
